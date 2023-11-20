@@ -1,6 +1,7 @@
 from sklearn.feature_extraction.text import TfidfVectorizer
 import joblib
 import os
+#data set should be provided
 
 #dataset directories
 dataset_directories = []
