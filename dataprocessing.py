@@ -44,11 +44,3 @@ tfidf_result = tfidf.fit_transform(all_document_texts)
 
 # Save the tfidf_result to a file using joblib
 joblib.dump(tfidf_result, 'tfidf_result.pkl')
-
-# Print the vocabulary, if needed
-print('\nindexes numbers:')
-print(tfidf.vocabulary_)
-
-# Print the TF-IDF values, if needed
-print('\nTF-IDF values:')
-print(tfidf_result)
