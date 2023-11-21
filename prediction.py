@@ -1,11 +1,11 @@
 import joblib
 
 from dataprocessing import remove_custom_stopwords
-
+# help to make use of old data to svm model so it use it to make prediction
 svm_model = joblib.load('svm_model.pkl')
 
+#both ensures consistency in feature representation when making predictions
 tfidf = joblib.load('tfidf_vectorizer.pkl')
-
 vocabulary = joblib.load('tfidf_vocabulary.pkl')
 
 tfidf.vocabulary_ = vocabulary
@@ -15,7 +15,7 @@ new_file_path = ''  # Replace with the path to your new file
 with open(new_file_path, 'r', encoding='utf-8') as file:
     new_text = file.read()
 
-new_text = remove_custom_stopwords(new_text)  # Assuming remove_custom_stopwords function is available
+new_text = remove_custom_stopwords(new_text)
 
 new_text_tfidf = tfidf.transform([new_text])
 
